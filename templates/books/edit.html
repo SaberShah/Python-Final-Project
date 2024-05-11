@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit book
+{% endblock %}
+
+{% block header %}
+Edit book
+{% endblock %}
+
+{% block content %}
+<form action="/books/update/{{ book.id }}" method="post">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" id="title" name="title" value="{{ book.title }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="author" class="form-label">Author:</label>
+        <input type="text" id="author" name="author" value="{{ book.author }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="published_year" class="form-label">Published year:</label>
+        <input type="date" id="publication_year" name="publication_year" value="{{ book.publication_year }}"
+               class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="language" class="form-label">Language:</label>
+        <input type="text" id="language" name="language" value="{{ book.language }}" class="form-control">
+    </div>
+    <input type="submit" value="Update" class="btn btn-primary">
+</form>
+{% endblock %}

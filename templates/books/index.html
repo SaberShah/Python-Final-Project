@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Books
+{% endblock %}
+
+{% block header %}
+Books
+{% endblock %}
+
+{% block content %}
+<a href="/books/new" class="btn btn-primary mb-3">Add a new book</a>
+<ul class="list-group">
+{% for book in books %}
+    <li class="list-group-item d-flex justify-content-between">
+        <a href="/books/{{ book.id }}">{{ book.title }}</a>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="/books/edit/{{ book.id }}" class="btn btn-secondary">Edit</a>
+            <a href="/books/delete/{{ book.id }}" class="btn btn-danger">Delete</a>
+        </div>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

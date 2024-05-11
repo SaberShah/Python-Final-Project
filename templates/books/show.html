@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+Book
+{% endblock %}
+
+{% block header %}
+{{ book.title }}
+{% endblock %}
+
+{% block content %}
+<p class="mb-1"><strong>Author:</strong> {{ book.author }}</p>
+<p class="mb-1"><strong>Published year:</strong> {{ book.publication_year }}</p>
+<p class="mb-3"><strong>Language:</strong> {{ book.language }}</p>
+{% endblock %}
